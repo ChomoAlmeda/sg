@@ -1,0 +1,100 @@
+a{
+	
+	text-decoration: none;
+}
+body{
+	font-size: 16px;
+}
+
+.col-md-12{
+	border: 1px solid #BDBDBD;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+	margin: 0em;
+	text-align: center;
+
+}
+
+.center-block{
+	padding-top: 25%;
+	width: 35%;
+}
+
+.jumbotron{
+	margin: .5em 0em 1em 0em;
+	
+}
+#agregar{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+#banner{
+	margin-bottom: 10px;
+}
+
+#datosTabla{
+	margin: 0em;
+}
+
+#eliminar{
+	color: #CC1414;
+	
+}
+#foot{
+	border: 1px solid #BDBDBD;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+	text-align: center;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+#navUsuario{
+	font-size: .8em;
+	padding: 0px;
+	margin: .5em 0em 1.2em 0em;
+	height: 40px;
+	width: 100%;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+#navUsuario .navbar-brand{
+	background: #BDBDBD;
+	border-radius: 5px 0px 0px 5px;
+	color: white;
+	margin: 0em;
+	font-size: 1em;
+}
+
+#productosMas{
+	border: 1px solid #BDBDBD;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+	padding: 1em 1em 0em 1em;
+	margin-bottom: 1em;
+}
+
+#tablaResultados td{
+	vertical-align: middle;
+	text-align: left;
+	padding: .2em;
+}
+#tablaAcceso{
+	margin: 10px;
+
+}
+
+.No{
+	color: red;
+	padding: 0em;
+	margin: 0em;
+}
+
+.completo{
+	width: 100%;
+}
+
+
+
+
