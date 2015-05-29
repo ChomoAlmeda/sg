@@ -4,12 +4,11 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>| Diagnostico de la Comunidad |</title>
+		<title>| Secretaria General UJED |</title>
 	    <!-- Bootstrap -->
 	    <link href="<?=base_url()?>includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	    <link href="<?=base_url()?>includes/bootstrap/estilo.css" rel="stylesheet">
-
 	    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	    <link href="<?=base_url()?>includes/bootstrap/css/estilo.css" rel="stylesheet">
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	    <!--[if lt IE 9]>
@@ -22,8 +21,6 @@
 		<br>
 		<div class="row-fluid">
 			<div class="jumbotron">
-		<div id="demo1" class="demo">
-					<h1>Rainbow</h1>
-				</div>
+				<h1>Secretaria General</h1>
 			</div>
 		</div>

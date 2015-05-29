@@ -1,0 +1,1 @@
+body{color:#00f;background:#000}.tablet,.desktop{display:none}@media screen and (min-width:480px){body{background:#f00;color:#fff}.tablet{display:block}.cel,.desktop{display:none}}@media screen and (min-width:1000px){body{color:#008000;background:#fff}.tablet,.cel{display:none}.desktop{display:block}}
