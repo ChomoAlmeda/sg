@@ -1,12 +1,39 @@
 <?php
-	echo "Hola";
-?>
-	<div class="tablet">
-		<h1>Estas viendolo horizontal</h1>
-	</div>
-	<div class="cel">
-		<h1>estas viendolo vertical</h1>
-	</div>
-	<div class="desktop">
-		<h1>Estas viendolo en PC</h1>
+	$nombre = array(
+		'id' 	=> 'Nombre', 
+		'name' 	=> 'Nombre',
+		'type' 	=> 'text', 
+		'class' => "form-control"
+		);
+
+	$contra = array(
+		'id' 	=> 'Contra', 
+		'name' 	=> 'Contra',
+		'type' 	=> 'password', 
+		'class' => "form-control"
+		);
+	$boton = array(
+		'id'  	=> 'Boton', 
+		'name'	=> 'Boton', 
+		'type'	=> 'Submit', 
+		'class'	=> 'btn btn-success', 
+		'value' => 'Accesar'
+		);
+?>	
+	<div class="center-block">
+		<?=form_open()?>
+		<table class="table table-bordered">
+			<tr>
+				<th colspan="2">Inicio de Sesion</th>
+			</tr>
+			<tr>
+				<th>Nombre: </th><td><?=form_input($nombre)?></td>
+			</tr>
+			<tr>
+				<th>Contraseña: </th><td><?=form_input($contra)?></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><?=form_input($boton)?></center></td>
+		</table>
+		<?=form_close()?>
 	</div>

@@ -24,10 +24,33 @@ class Inicio extends CI_Controller {
 
    	//index() pide usuario y contraseña para poder entrar al sistema
 	public function index()
-	{			
-		$this->load->view('estructura/head');
-		$this->load->view('usuarios/inicio');
-		$this->load->view('estructura/foot');
+	{		
+		if($_POST){
+			$nombre = $this->input->post('Nombre');
+			$contra = $this->input->post('Contra');
+			$consulta = $this->Inicio_model->comprobar($nombre, $contra);
+			foreach($consulta->result() as $row){
+				$usuario_data = array(
+	               'id' => $row->IdUsuario,
+	               'nombre' => $row->Nombre,
+	               'tipo'	=> $row->Tipo,
+	               'logueado' => TRUE
+	            );
+		        $this->session->set_userdata($usuario_data);
+		        $a = $this->session->userdata('tipo');
+		        
+		        switch($a){
+		        	case 0:
+		        		$datos['direccion'] = 'Consulta/inicio';
+		        		$this->load->view('redirect', $datos);
+		        	break;
+		        }
+		      }
+		}else{
+			$this->load->view('estructura/head1');
+			$this->load->view('usuarios/inicio');
+			$this->load->view('estructura/foot1');
+		}
 	}
 
 }

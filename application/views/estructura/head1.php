@@ -7,7 +7,7 @@
 		<title>| Diagnostico de la Comunidad |</title>
 	    <!-- Bootstrap -->
 	    <link href="<?=base_url()?>includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	    <link href="<?=base_url()?>includes/bootstrap/estilo.css" rel="stylesheet">
+	    <link href="<?=base_url()?>includes/bootstrap/css/estilo.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
