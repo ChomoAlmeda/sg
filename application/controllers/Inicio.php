@@ -59,5 +59,10 @@ class Inicio extends CI_Controller {
 		}
 	}
 	//captura() se utiliza para mostrar la seccion de capturas
-	
+	public function captura()
+	{
+		$this->load->view('estructura/head');
+		$this->load->view('usuarios/captura');
+		$this->load->view('estructura/foot');
+	}
 }
