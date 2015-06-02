@@ -25,9 +25,10 @@ class Consulta extends CI_Controller {
    	//index() pide usuario y contraseña para poder entrar al sistema
 	public function inicio()
 	{	
-
+		$hoy = date('Y-m-d');
+		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
 		$this->load->view('estructura/head');
-		$this->load->view('consulta/inicio');
+		$this->load->view('consulta/inicio', $datos);
 		$this->load->view('estructura/foot');
 	}
 }
