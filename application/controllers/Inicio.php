@@ -29,28 +29,35 @@ class Inicio extends CI_Controller {
 			$nombre = $this->input->post('Nombre');
 			$contra = $this->input->post('Contra');
 			$consulta = $this->Inicio_model->comprobar($nombre, $contra);
-			foreach($consulta->result() as $row){
-				$usuario_data = array(
-	               'id' => $row->IdUsuario,
-	               'nombre' => $row->Nombre,
-	               'tipo'	=> $row->Tipo,
-	               'logueado' => TRUE
-	            );
-		        $this->session->set_userdata($usuario_data);
-		        $a = $this->session->userdata('tipo');
-		        
-		        switch($a){
-		        	case 0:
-		        		$datos['direccion'] = 'Consulta/inicio';
-		        		$this->load->view('redirect', $datos);
-		        	break;
-		        }
-		      }
+				if($consulta->num_rows() > 0){
+					foreach($consulta->result() as $row){
+						$usuario_data = array(
+			               'id' => $row->IdUsuario,
+			               'nombre' => $row->Nombre,
+			               'tipo'	=> $row->Tipo,
+			               'logueado' => TRUE
+			            );
+				        $this->session->set_userdata($usuario_data);
+				        $a = $this->session->userdata('tipo');
+					        switch($a){
+					        	case 0:
+					        		$datos['direccion'] = 'Consulta/inicio';
+					        		$this->load->view('redirect', $datos);
+					        	break;
+					        	case 1: 
+					        		$datos['direccion'] = 'Inicio/captura';
+					        		$this->load->view('redirect', $datos);
+					        }
+			    	}
+				}else{
+					echo "No hay usuarios con esos datos";
+				}
 		}else{
 			$this->load->view('estructura/head1');
 			$this->load->view('usuarios/inicio');
 			$this->load->view('estructura/foot1');
 		}
 	}
-
+	//captura() se utiliza para mostrar la seccion de capturas
+	
 }

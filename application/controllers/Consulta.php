@@ -24,9 +24,10 @@ class Consulta extends CI_Controller {
 
    	//index() pide usuario y contraseña para poder entrar al sistema
 	public function inicio()
-	{		
+	{	
+
 		$this->load->view('estructura/head');
-		echo $this->session->userdata('nombre');
+		$this->load->view('consulta/inicio');
 		$this->load->view('estructura/foot');
 	}
 }
