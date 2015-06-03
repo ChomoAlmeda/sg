@@ -61,8 +61,17 @@ class Inicio extends CI_Controller {
 	//captura() se utiliza para mostrar la seccion de capturas
 	public function captura()
 	{
+		$hoy = date('Y-m-d');
+		if($_POST){
+			$evento = $this->input->post('Evento');
+			$lugar	= $this->input->post('Lugar');
+			$fecha	= $this->input->post('Fecha');
+			$hora	= $this->input->post('Hora');
+			$this->Inicio_model->agregar_agenda($evento, $lugar,$fecha, $hora);
+		}
+		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
 		$this->load->view('estructura/head');
-		$this->load->view('usuarios/captura');
+		$this->load->view('usuarios/captura', $datos);
 		$this->load->view('estructura/foot');
 	}
 }
