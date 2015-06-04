@@ -26,6 +26,9 @@ class Consulta extends CI_Controller {
 	public function inicio()
 	{	
 		$hoy = date('Y-m-d');
+		$manana = date('Y-m-d', strtotime($hoy . ' + 1 day'));		
+		
+		$datos['manana'] = $this->Consulta_model->manana($manana);
 		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
 		$this->load->view('estructura/head');
 		$this->load->view('consulta/inicio', $datos);

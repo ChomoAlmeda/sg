@@ -15,5 +15,14 @@ class Consulta_model extends CI_Model {
         $consulta = $this->db->get_where('ag_agenda', $condicion);
         return $consulta;
     }
+
+    function manana($manana){
+        $condicion = array(
+            'Fecha' => $manana
+            );
+
+        $consulta = $this->db->get_where('ag_agenda', $condicion);
+        return $consulta;
+    }
 }
 ?>

@@ -69,7 +69,10 @@ class Inicio extends CI_Controller {
 			$hora	= $this->input->post('Hora');
 			$this->Inicio_model->agregar_agenda($evento, $lugar,$fecha, $hora);
 		}
+		$manana = date('Y-m-d', strtotime($hoy . ' + 1 day'));		
+		
 		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
+		$datos['manana'] = $this->Consulta_model->manana($manana);
 		$this->load->view('estructura/head');
 		$this->load->view('usuarios/captura', $datos);
 		$this->load->view('estructura/foot');
