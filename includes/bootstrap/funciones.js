@@ -1,10 +1,13 @@
+$('#agregar').click(function(){
+   $( ".formulario" ).toggleClass( "mostrar" );
+});
+$('#Fecha').datepicker({dateFormat: "yy-mm-dd"});
 
-  $('#agregar').click(function(){
-    $( ".formulario" ).toggleClass( "mostrar" );
+$('#buscar').datepicker({dateFormat: "yy-mm-dd"});
 
-  });
-
-  $('#Fecha').datepicker({dateFormat: "yy-mm-dd"});
+$('#imprimir').click(function (){
+	window.print();
+});
 
   
 

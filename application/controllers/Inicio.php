@@ -41,12 +41,17 @@ class Inicio extends CI_Controller {
 				        $a = $this->session->userdata('tipo');
 					        switch($a){
 					        	case 0:
-					        		$datos['direccion'] = 'Consulta/inicio';
+					        		$datos['direccion'] = 'Inicio/principal';
 					        		$this->load->view('redirect', $datos);
 					        	break;
 					        	case 1: 
-					        		$datos['direccion'] = 'Inicio/captura';
+					        		$datos['direccion'] = 'Consulta/inicio';
 					        		$this->load->view('redirect', $datos);
+					        	break;
+					        	case 2: 
+					        		$datos['direccion'] = 'Admin/inicio';
+					        		$this->load->view('redirect', $datos);
+					        	break;
 					        }
 			    	}
 				}else{
@@ -58,23 +63,30 @@ class Inicio extends CI_Controller {
 			$this->load->view('estructura/foot1');
 		}
 	}
-	//captura() se utiliza para mostrar la seccion de capturas
-	public function captura()
-	{
+
+	public function principal(){
 		$hoy = date('Y-m-d');
 		if($_POST){
-			$evento = $this->input->post('Evento');
-			$lugar	= $this->input->post('Lugar');
-			$fecha	= $this->input->post('Fecha');
-			$hora	= $this->input->post('Hora');
-			$this->Inicio_model->agregar_agenda($evento, $lugar,$fecha, $hora);
+
+		}else{
+			$manana = date('Y-m-d', strtotime($hoy . ' + 1 day'));		
+			$datos['agenda'] = $this->Consulta_model->agenda($hoy);
+			$datos['manana'] = $this->Consulta_model->manana($manana);
+			$datos['bread']	= 1;
+			$this->load->view('estructura/head', $datos);
+			$this->load->view('usuarios/principal', $datos);
+			$this->load->view('estructura/foot');
 		}
-		$manana = date('Y-m-d', strtotime($hoy . ' + 1 day'));		
-		
-		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
-		$datos['manana'] = $this->Consulta_model->manana($manana);
-		$this->load->view('estructura/head');
-		$this->load->view('usuarios/captura', $datos);
+	}
+	//captura() se utiliza para mostrar la seccion de capturas
+	
+
+	public function buscar(){
+		$datos['bread']	= 2;
+		$buscar = $this->input->post('buscar');
+		$datos['consulta'] = $this->Inicio_model->buscar($buscar);
+		$this->load->view('estructura/head', $datos);
+		$this->load->view('usuarios/buscar', $datos);
 		$this->load->view('estructura/foot');
 	}
 }

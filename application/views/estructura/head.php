@@ -24,3 +24,24 @@
 				<h1>Secretaria General</h1>
 			</div>
 		</div>
+<div class="row">
+	<div class="col-sm-12">
+		<ul class="breadcrumb">
+			<?
+				switch ($bread) {
+					case 1:?>
+						<li><a href="<?=base_url()?>index.php/Inicio/principal/">Inicio</a></li>	
+				  <?break;
+					case 2:?>
+						<li><a href="<?=base_url()?>index.php/Inicio/principal/">Inicio</a> <span class="divider"> /</span> Buscar</li>
+					<?break;
+					case 21:?>
+						<li><a href="<?=base_url()?>index.php/Consulta/inicio/">Inicio</a></li>	
+					<?break;
+				}
+			?>
+		
+	      
+	    </ul>
+	</div>
+</div>
