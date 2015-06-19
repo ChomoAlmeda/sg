@@ -30,10 +30,10 @@
 			<?
 				switch ($bread) {
 					case 1:?>
-						<li><a href="<?=base_url()?>index.php/Inicio/principal/">Inicio</a></li>	
+						<li><a href="<?=base_url()?>index.php/Secretaria/principal/">Inicio</a></li>	
 				  <?break;
 					case 2:?>
-						<li><a href="<?=base_url()?>index.php/Inicio/principal/">Inicio</a> <span class="divider"> /</span> Buscar</li>
+						<li><a href="<?=base_url()?>index.php/Secretaria/principal/">Inicio</a> <span class="divider"> /</span> Buscar</li>
 					<?break;
 					case 21:?>
 						<li><a href="<?=base_url()?>index.php/Consulta/inicio/">Inicio</a></li>	

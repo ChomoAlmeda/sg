@@ -16,7 +16,7 @@
 
 <div class="row">
 	<div class="col-sm-12">
-		<?=form_open('Inicio/buscar')?>
+		<?=form_open('Secretaria/buscar')?>
 		<table class="table table-bordered">
 			<tr>
 				<th colspan='2'><?=form_input($buscar)?></th><td><center><?=form_input($boton)?></center></td>
