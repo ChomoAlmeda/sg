@@ -25,5 +25,21 @@ class Consulta_model extends CI_Model {
         return $consulta;
     }
 
+    function documentos(){
+        $this->db->order_by('IdDocumentos', 'DESC');
+        $consulta = $this->db->get('bc_documentos');
+        return $consulta;
+    }
+
+    function agregar_agenda($evento, $lugar, $fecha, $hora){
+        $condicion = array(
+                'Evento'    => $evento,
+                'Lugar'     => $lugar, 
+                'Fecha'     => $fecha,
+                'Hora'      => $hora
+            );
+        $this->db->insert('ag_agenda', $condicion);
+    }
+
 }
 ?>

@@ -35,8 +35,8 @@
 					case 2:?>
 						<li><a href="<?=base_url()?>index.php/Secretaria/principal/">Inicio</a> <span class="divider"> /</span> Buscar</li>
 					<?break;
-					case 21:?>
-						<li><a href="<?=base_url()?>index.php/Consulta/inicio/">Inicio</a></li>	
+					case 13:?>
+						<li><a href="<?=base_url()?>index.php/Admin/principal/">Inicio</a></li>	
 					<?break;
 				}
 			?>

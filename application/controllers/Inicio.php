@@ -41,15 +41,11 @@ class Inicio extends CI_Controller {
 				        $a = $this->session->userdata('tipo');
 					        switch($a){
 					        	case 0:
-					        		$datos['direccion'] = 'Secretaria/principal';
-					        		$this->load->view('redirect', $datos);
-					        	break;
-					        	case 1: 
-					        		$datos['direccion'] = 'Consulta/principal';
-					        		$this->load->view('redirect', $datos);
-					        	break;
-					        	case 2: 
 					        		$datos['direccion'] = 'Admin/principal';
+					        		$this->load->view('redirect', $datos);
+					        	break;					     
+					        	case 1: 
+					        		$datos['direccion'] = 'Secretaria/principal';
 					        		$this->load->view('redirect', $datos);
 					        	break;
 					        }
