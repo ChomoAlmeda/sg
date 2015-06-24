@@ -129,7 +129,7 @@ $buscar = array(
 					<? 
 					if($manana->num_rows() > 0){
 						echo "<tr><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
-							foreach($agenda->result() as $row){
+							foreach($manana->result() as $row){
 								echo "<tr><td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
 							}
 					}else{
