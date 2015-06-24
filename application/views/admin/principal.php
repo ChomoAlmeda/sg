@@ -147,7 +147,20 @@ $buscar = array(
 
 
       <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-        Otro Doc
+        <div class="row">
+        	<div class="col-md-12">
+        		<h1>Documentos en tramite<a href="#" id="agregarDocs"><span class="glyphicon glyphicon-plus"></span></a></h1>
+        		<div class="formularioDocs">
+	        		<table class="table table-bordered">
+	        			<tr>
+	        				<th>HOla</th>
+	        				<th>Hola</th>
+	        				<th>Hola</th>
+	        			</tr>
+	        		</table>
+        		</div>
+        	</div>
+        </div>
       </div>
     </div>
   
