@@ -4,7 +4,7 @@ $('#agregar').click(function(){
 });
 
 $('#agregarDocs').click(function(){
-   $(".formularioDocs").toggleClass( "mostrarDocs" );
+   $( ".formularioDocs" ).toggleClass( "mostrarDocs" );
    return false;
 });
 
