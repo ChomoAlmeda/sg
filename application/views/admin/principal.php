@@ -149,8 +149,9 @@ $buscar = array(
 						<?=form_close()?>
 					</div>
 	        	<div class="col-md-12">
-	        		<h1>Documentos en tramite <a href="#" id="agregarDocs"><span class="glyphicon glyphicon-plus"></span></a></h1>
-	        		<div class="formularioDocs">
+	        		<h1>Documentos en tramite <a href="#" id="agregar"><span class="glyphicon glyphicon-plus"></span></a></h1>
+
+	        		<div class="formulario">
 		        		<table class="table table-bordered">
 		        			<tr>
 		        				<th>HOla</th>
