@@ -27,6 +27,7 @@ class Consulta_model extends CI_Model {
 
     function documentos(){
         $this->db->order_by('IdDocumentos', 'DESC');
+        $this->db->join('ab_areas', 'bc_documentos.IdArea = ab_areas.IdArea');
         $consulta = $this->db->get('bc_documentos');
         return $consulta;
     }
@@ -39,6 +40,22 @@ class Consulta_model extends CI_Model {
                 'Hora'      => $hora
             );
         $this->db->insert('ag_agenda', $condicion);
+    }
+    function agregarD($hora, $fechaD, $tramite, $observacion, $quien){
+        $condicion = array(
+                'Hora' => $hora,
+                'Fecha' => $fechaD, 
+                'Tramite' => $tramite,
+                'Observacion' => $observacion, 
+                'IdArea' => $quien
+            );
+
+        $this->db->insert('bc_documentos', $condicion);
+    }
+    function areas(){
+        $this->db->order_by('Area');
+        $consulta = $this->db->get('ab_areas');
+        return $consulta;
     }
 
 }

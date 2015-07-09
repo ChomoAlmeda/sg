@@ -11,9 +11,10 @@ class Admin extends CI_Controller {
 		$hoy = date('Y-m-d');
 		$manana = date('Y-m-d', strtotime($hoy . ' + 1 day'));	
 		
+		$datos['areas'] = $this->Consulta_model->areas();
 		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
 		$datos['manana'] = $this->Consulta_model->manana($manana);
-		$datos['docs']	= $this->Consulta_model->documentos();
+		$datos['documentos']	= $this->Consulta_model->documentos();
 		$datos['bread']	= 11;
 		$this->load->view('estructura/head', $datos);
 		$this->load->view('admin/principal', $datos);
@@ -38,6 +39,17 @@ class Admin extends CI_Controller {
 		$this->load->view('estructura/head', $datos);
 		$this->load->view('admin/principal', $datos);
 		$this->load->view('estructura/foot');
+	}
+	public function agregarD(){
+		$hora = $this->input->post('Hora');
+		$fechaD = $this->input->post('FechaD');
+		$tramite = $this->input->post('Tramite');
+		$observacion = $this->input->post('Observacion');
+		$quien = $this->input->post('Quien');
+
+		$this->Consulta_model->agregarD($hora, $fechaD, $tramite, $observacion, $quien);
+		$datos['direccion'] = 'Admin/principal';
+		$this->load->view('redirect', $datos);
 	}
 
 	public function buscar(){

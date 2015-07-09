@@ -1,7 +1,7 @@
 <?php
-?>			<div class="row-fluid">
-				<div class="col-md-12" id="foot">
-					| VyDE | UJED en Linea
+?>			<div class="row">
+				<div class="col-sm-12" id="foot">
+					<center>| VyDE | UJED en Linea</center>
 				</div>
 			</div>
 		</div>
