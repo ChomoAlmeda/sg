@@ -88,6 +88,12 @@
 			'id'	=> 'Quien', 
 			'class'	=> 'form-control'
 		);
+	$doc = array(
+			'name'	=> 'Doc', 
+			'id'	=> 'Doc',
+			'value'	=> set_value('Doc'),
+			'type' 	=> 'file'
+		);
 	$botonD = array(
 			'id' => 'boton', 
 			'name' => 'boton', 
@@ -200,7 +206,7 @@
 	    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 	    	<div class="row">
 	        	<div class="col-md-12">
-	        		<?=form_open('Admin/agregarD')?>
+	        		<?=form_open_multipart('Admin/agregarD')?>
 	        		<center><h3>Documentos en tramite </h3></center>
 
 	        		<div class="formulario">
@@ -218,7 +224,12 @@
 																}
 															
 														}?>
-		        										</select></td></tr>
+		        										</select></td>
+		        			</tr>
+		        			<tr>
+								<th>Documento:</th>
+								<td><?=form_upload($doc)?></td>
+							</tr>
 		        			<tr>
 		        				<th colspan="2">
 		        					<center><?=form_input($botonD)?></center>
