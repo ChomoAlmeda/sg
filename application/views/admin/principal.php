@@ -255,12 +255,12 @@
 				<div class="col-sm-12">
 					<table class="table table-bordered">
 						<tr>
-							<th>Documento</th><th>Hora</th><th>Fecha</th><th>Area</th><th>Tramite</th>
+							<th></th><th>Hora</th><th>Fecha</th><th>Area</th><th>Tramite</th><th>Observacion</th>
 						</tr>
 						<?php
 							if($documentos -> num_rows() > 0){
 								foreach($documentos -> result() as $row){
-									echo "<tr><td>".$row->Observacion."</td><td>".$row->Hora."</td><td>".$row->Fecha."</td><td>".$row->Area."</td><td>".$row->Tramite."</td></tr>";
+									echo "<tr><td><a href='".base_url()."includes/docs/".$row->Doc."' target = '_self'><span class='glyphicon glyphicon-eye-open'></span></a></td><td>".$row->Hora."</td><td>".$row->Fecha."</td><td>".$row->Area."</td><td>".$row->Tramite."</td><td>".$row->Observacion."</td></tr>";
 								}
 							}
 						?>

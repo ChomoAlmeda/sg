@@ -43,7 +43,6 @@ class Admin extends CI_Controller {
 		$observacion = $this->input->post('Observacion');
 		$quien = $this->input->post('Quien');
 		$doc = $this->input->post('Doc');
-		echo $doc;
 
 			$nom_doc =substr(md5(uniqid(rand())),0,6);
 			$config['file_name'] = $nom_doc;
@@ -60,7 +59,7 @@ class Admin extends CI_Controller {
 			$nom_doc = $nom_doc.$upload_data['file_ext'];
 			echo $nom_doc;
 
-		$this->Consulta_model->agregarD($hora, $fechaD, $tramite, $observacion, $quien);
+		$this->Consulta_model->agregarD($hora, $fechaD, $tramite, $observacion, $quien, $nom_doc);
 		$datos['direccion'] = 'Admin/principal';
 		$this->load->view('redirect', $datos);
 	}
