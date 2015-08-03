@@ -20,20 +20,24 @@
 		'value' => 'Accesar'
 		);
 ?>	
-	<div class="center-block">
-		<?=form_open()?>
-		<table class="table table-bordered">
-			<tr>
-				<th colspan="2">Inicio de Sesion</th>
-			</tr>
-			<tr>
-				<th>Nombre: </th><td><?=form_input($nombre)?></td>
-			</tr>
-			<tr>
-				<th>Contraseña: </th><td><?=form_input($contra)?></td>
-			</tr>
-			<tr>
-				<td colspan="2"><center><?=form_input($boton)?></center></td>
-		</table>
-		<?=form_close()?>
+<div class="con">
+	<div class="row">
+		<section>
+			<?=form_open()?>
+			<table class="table table-bordered">
+				<tr>
+					<th colspan="2">Inicio de Sesion</th>
+				</tr>
+				<tr>
+					<th>Nombre: </th><td><?=form_input($nombre)?></td>
+				</tr>
+				<tr>
+					<th>Contraseña: </th><td><?=form_input($contra)?></td>
+				</tr>
+				<tr>
+					<td colspan="2"><center><?=form_input($boton)?></center></td>
+			</table>
+			<?=form_close()?>
+		</section>	
 	</div>
+</div>
