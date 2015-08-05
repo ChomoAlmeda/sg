@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
 	public function principal(){
 		$hoy = date('Y-m-d');
 		$manana = date('Y-m-d', strtotime($hoy . ' + 1 day'));	
-		
+		$datos['usuario'] = $this->session->userdata('nombre');
 		$datos['areas'] = $this->Consulta_model->areas();
 		$datos['agenda'] = $this->Consulta_model->agenda($hoy);
 		$datos['manana'] = $this->Consulta_model->manana($manana);
