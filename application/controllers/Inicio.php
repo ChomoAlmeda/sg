@@ -56,7 +56,7 @@ class Inicio extends CI_Controller {
 		}else{
 			$this->load->view('estructura/head1');
 			$this->load->view('usuarios/inicio');
-			$this->load->view('estructura/foot1');
+			$this->load->view('estructura/foot');
 		}
 	}
 

@@ -1,0 +1,141 @@
+*
+	padding 0px
+	margin 0px
+	
+body 
+	font-size 16px
+	color black
+	font-family Arial
+
+.container
+	width 100%
+.row
+	display flex
+	justify-content center
+	width 100%
+.banner
+	display none
+//Contenedor del menu y de sus elementos
+header 
+	width 100%
+	background #024959
+	margin 0px auto 10px auto
+	opacity .8
+	z-index 100
+	position relative
+	nav
+		width 90%
+		max-width 1000px
+		margin 0px auto
+		background #024959
+		
+		ul
+			display flex
+			justify-content center
+			overflow hidden
+			list-style none
+			li
+				float left
+				display block
+				width auto
+				span 
+					margin-right 10px
+				a
+					color white
+					padding 20px
+					text-decoration none
+					height auto
+					display block
+					&:hover
+						background #FF1972
+//termina el menu//
+	.menu 
+		display none
+
+
+//MEdia query, aqui empieza el responsive design de 680 px 0 menos
+@media screen and (max-width: 680px)
+	section
+		display block
+		article 
+			float left
+			position relative
+			width 100%
+	header
+		nav
+			left -100%
+			width 80%
+			height auto
+			margin 0px
+			position fixed
+			opacity 1
+			z-index 500
+			ul
+				display block
+				li
+					display block
+					width 100%
+					float none
+					border-bottom rgba(225,255,255, 1)
+	.menu
+		display block
+		background #024959
+		padding 15px
+		height 20px
+		opacity 1
+
+		p
+			float left
+			height auto
+			
+		span
+			float right
+			height auto
+/*
+	Media Query para el diseño de 1000 px
+	Se muestra el .banner como encabezado de la pagina
+	
+*/
+@media screen and (min-width: 1000px)
+	body 
+		background white
+	
+	.rowN
+		width 90%
+	.banner
+		height auto
+		width 100%
+		h1
+			display block
+			font-size 50px
+			height auto
+			letter-spacing 1.5px
+			margin 40px auto		
+	.boxFlex
+		display flex
+		justify-content center
+	.boxEntre
+		display flex
+		justify-content space-between
+	.left
+		display flex
+		justify-content flex-start	
+		width 90%
+		h4
+			color gray
+			font-family Times
+			font-style italic
+				
+			
+	.margen 
+		margin 10px 0px
+	.mitad
+		width 45%
+		
+	.redondo
+		background #003A66
+		border-radius 10px 10px 0px 0px
+		color white
+		width 90%
+	
+		

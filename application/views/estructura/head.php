@@ -24,6 +24,7 @@
 				</div>
 			</section>
 		</div>
+		
 		<header>	
 			<div class="menu">
 				<p>Secretaria General</p> <span class="icon-menu"></span>
@@ -37,4 +38,3 @@
 				</nav>
 			</div>
 		</header>
-		

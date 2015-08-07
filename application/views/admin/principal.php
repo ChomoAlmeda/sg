@@ -103,49 +103,7 @@
 		);
 	
 ?>
-	<!--<div class="row">
-	    <div class="formulario" >
-			<?=form_open('Admin/captura')?>
-				<table class="table table-bordered">
-					<tr>
-						<th colspan="2">
-							<center>Agregar Evento</center>
-						</th>
-					</tr>
-					<tr>
-						<th>Nombre:</th>
-						<td><?=form_input($evento)?></td>
-					</tr>
-					<tr>
-						<th>Lugar:</th>
-						<td><?=form_input($lugar)?></td>
-					</tr>
-					<tr>
-						<th>Fecha:</th>
-						<td><?=form_input($fecha)?></td>
-					</tr>
-					<tr>
-						<th>Hora:</th>
-						<td><?=form_input($hora)?></td>
-					</tr>
-					<tr>
-						<th colspan='2'>
-							<center><?=form_input($boton)?></center>
-						</th>
-					</tr>
-				</table>
-			<?=form_close()?>
-		</div>
-	</div>!-->
-	<!--<div class="row">
-		<?=form_open('Admin/buscar')?>
-			<table class="table table-bordered">
-				<tr>
-					<th colspan='2'><?=form_input($buscar)?></th><td><center><?=form_input($botonB)?></center></td>
-				</tr>
-			</table>
-		<?=form_close()?>
-	</div>!-->
+	
 	<div class="row">
 		<section class="left">
 			<h4>Bienvenido: <?=$usuario?></h4>
@@ -199,75 +157,6 @@
 		</table>
 	</div>
 
-	<!--
-	    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-	    	<div class="row">
-	        	<div class="col-md-12">
-	        		<?=form_open_multipart('Admin/agregarD')?>
-	        		<center><h3>Documentos en tramite </h3></center>
-
-	        		<div class="formulario">
-		        		<table class="table table-bordered">
-		        			<tr><th>Hora:</th><td><?=form_input($hora)?></td></tr>
-		        			<tr><th>Fecha:</th><td><?=form_input($fechaD)?></td></tr>
-		        			<tr><th>Tramite:</th><td><?=form_input($tramite)?></td></tr>
-		        			<tr><th>Observacion:</th><td><?=form_input($observacion)?></td></tr>
-		        			<tr><th>Quien envia:</th><td><select name="Quien" class="form-control"><?
-
-		        										if($areas -> num_rows() > 0){
-																
-															foreach($areas ->result() as $row){
-																	echo "<option value=".$row->IdArea.">".$row->Area."</option>";
-																}
-															
-														}?>
-		        										</select></td>
-		        			</tr>
-		        			<tr>
-								<th>Documento:</th>
-								<td><?=form_upload($doc)?></td>
-							</tr>
-		        			<tr>
-		        				<th colspan="2">
-		        					<center><?=form_input($botonD)?></center>
-		        				</th>
-		        			</tr>
-		        		</table>
-	        		</div>
-					<?=form_close()?>
-	        	</div>
-	        </div>
-	    	<div class="row">
-	    		<div class="col-sm-12">
-						<?=form_open('Admin/buscarD')?>
-							<table class="table table-bordered">
-								<tr>
-									<th colspan='2'><?=form_input($buscarD)?></th><td><center><?=form_input($botonBD)?></center></td>
-								</tr>
-							</table>
-						<?=form_close()?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<table class="table table-bordered">
-						<tr>
-							<th></th><th>Hora</th><th>Fecha</th><th>Area</th><th>Tramite</th><th>Observacion</th>
-						</tr>
-						<?php
-							if($documentos -> num_rows() > 0){
-								foreach($documentos -> result() as $row){
-									echo "<tr><td><a href='".base_url()."includes/docs/".$row->Doc."' target = '_self'><span class='glyphicon glyphicon-eye-open'></span></a></td><td>".$row->Hora."</td><td>".$row->Fecha."</td><td>".$row->Area."</td><td>".$row->Tramite."</td><td>".$row->Observacion."</td></tr>";
-								}
-							}
-						?>
-						<tr></tr>
-					</table>
-				</div>
-			</div>
-			
-	    </div>
-	</div>
-  
+	
 
 

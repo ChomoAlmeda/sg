@@ -1,0 +1,158 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  font-size: 16px;
+  color: #000;
+  font-family: Arial;
+}
+.container {
+  width: 100%;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.banner {
+  display: none;
+}
+header {
+  width: 100%;
+  background: #024959;
+  margin: 0px auto 10px auto;
+  opacity: 0.8;
+  z-index: 100;
+  position: relative;
+}
+header nav {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0px auto;
+  background: #024959;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  list-style: none;
+}
+header nav ul li {
+  float: left;
+  display: block;
+  width: auto;
+}
+header nav ul li span {
+  margin-right: 10px;
+}
+header nav ul li a {
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  height: auto;
+  display: block;
+}
+header nav ul li a:hover {
+  background: #ff1972;
+}
+.menu {
+  display: none;
+}
+@media screen and (max-width: 680px) {
+  section {
+    display: block;
+  }
+  section article {
+    float: left;
+    position: relative;
+    width: 100%;
+  }
+  header nav {
+    left: -100%;
+    width: 80%;
+    height: auto;
+    margin: 0px;
+    position: fixed;
+    opacity: 1;
+    z-index: 500;
+  }
+  header nav ul {
+    display: block;
+  }
+  header nav ul li {
+    display: block;
+    width: 100%;
+    float: none;
+    border-bottom: #e1ffff;
+  }
+  .menu {
+    display: block;
+    background: #024959;
+    padding: 15px;
+    height: 20px;
+    opacity: 1;
+  }
+  .menu p {
+    float: left;
+    height: auto;
+  }
+  .menu span {
+    float: right;
+    height: auto;
+  }
+}
+/*
+	Media Query para el diseño de 1000 px
+	Se muestra el .banner como encabezado de la pagina
+	
+*/
+@media screen and (min-width: 1000px) {
+  body {
+    background: #fff;
+  }
+  .rowN {
+    width: 90%;
+  }
+  .banner {
+    height: auto;
+    width: 100%;
+  }
+  .banner h1 {
+    display: block;
+    font-size: 50px;
+    height: auto;
+    letter-spacing: 1.5px;
+    margin: 40px auto;
+  }
+  .boxFlex {
+    display: flex;
+    justify-content: center;
+  }
+  .boxEntre {
+    display: flex;
+    justify-content: space-between;
+  }
+  .left {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+  }
+  .left h4 {
+    color: #808080;
+    font-family: Times;
+    font-style: italic;
+  }
+  .margen {
+    margin: 10px 0px;
+  }
+  .mitad {
+    width: 45%;
+  }
+  .redondo {
+    background: #003a66;
+    border-radius: 10px 10px 0px 0px;
+    color: #fff;
+    width: 90%;
+  }
+}
