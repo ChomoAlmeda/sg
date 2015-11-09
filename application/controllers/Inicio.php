@@ -38,8 +38,8 @@ class Inicio extends CI_Controller {
 			               'logueado' => TRUE
 			            );
 				        $this->session->set_userdata($usuario_data);
-				        $a = $this->session->userdata('nombre');
-					       switch($a){
+				        $a = $this->session->userdata('tipo');
+					        switch($a){
 					        	case 0:
 					        		$datos['direccion'] = 'Admin/principal';
 					        		$this->load->view('redirect', $datos);
@@ -56,7 +56,7 @@ class Inicio extends CI_Controller {
 		}else{
 			$this->load->view('estructura/head1');
 			$this->load->view('usuarios/inicio');
-			$this->load->view('estructura/foot');
+			$this->load->view('estructura/foot1');
 		}
 	}
 

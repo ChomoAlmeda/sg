@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>| Diagnostico de la Comunidad |</title>
+		<title>| Secretaria General UJED |</title>
 	    <!-- Bootstrap -->
 	    <link href="<?=base_url()?>includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	    <link href="<?=base_url()?>includes/bootstrap/css/estilo.css" rel="stylesheet">
@@ -17,5 +17,5 @@
 	    <![endif]-->
 	</head>
 <body>
-	
+	<div class="container">
 		

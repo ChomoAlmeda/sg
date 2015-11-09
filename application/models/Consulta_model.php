@@ -32,31 +32,56 @@ class Consulta_model extends CI_Model {
         return $consulta;
     }
     
-    function agregar_agenda($evento, $lugar, $fecha, $hora){
+    function agregar_agenda($evento, $lugar, $fecha, $hora, $evidencia){
         $condicion = array(
                 'Evento'    => $evento,
                 'Lugar'     => $lugar, 
                 'Fecha'     => $fecha,
-                'Hora'      => $hora
+                'Hora'      => $hora,
+                'Evidencia' => $evidencia
             );
         $this->db->insert('ag_agenda', $condicion);
     }
-    function agregarD($hora, $fechaD, $tramite, $observacion, $quien, $nom_doc){
+    function agregarD($area, $folio, $hora, $fechaD, $tramite, $observacion, $quien, $nom_doc){
         $condicion = array(
+                'IdArea' => $area,
+                'Folio' => $folio,
                 'Hora' => $hora,
                 'Fecha' => $fechaD, 
                 'Tramite' => $tramite,
                 'Observacion' => $observacion, 
-                'IdArea' => $quien, 
+                'Quien' => $quien, 
                 'Doc'   => $nom_doc
             );
 
         $this->db->insert('bc_documentos', $condicion);
     }
+
+    function modificarDoc($id, $folio, $hora, $fechaD, $tramite, $observacion,$area, $quien, $nom_doc){
+            $condicion = array(
+                    'Hora' => $hora,
+                    'Folio' => $folio,
+                    'Fecha' => $fechaD, 
+                    'Tramite' => $tramite,
+                    'Observacion' => $observacion, 
+                    'IdArea' => $area, 
+                    'Quien' => $quien,
+                    'Doc'   => $nom_doc
+            );
+            $this->db->where('IdDocumentos', $id);
+            $this->db->update('bc_documentos', $condicion); 
+    }
     function areas(){
-        $this->db->order_by('Area');
+        $this->db->order_by('IdArea');
         $consulta = $this->db->get('ab_areas');
         return $consulta;
+    }
+
+    function borrar($id){
+        $condicion = array(
+            'IdDocumentos' => $id
+            );
+        $this->db->delete('bc_documentos', $condicion);
     }
 
 }

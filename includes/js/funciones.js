@@ -26,8 +26,6 @@ $('#FechaD').datepicker({dateFormat: "yy-mm-dd"});
 $('#buscar').datepicker({dateFormat: "yy-mm-dd"});
 $('#buscarD').datepicker({dateFormat: "yy-mm-dd"});
 
-  
-
   $(function() {
     var availableTags = [
      	"Para su conocimiento", 

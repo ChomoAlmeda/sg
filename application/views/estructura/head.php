@@ -6,8 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>| Secretaria General UJED |</title>
 	    <!-- Bootstrap -->
+	    <link href="<?=base_url()?>includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-	    <link href="<?=base_url()?>includes/css/estilo.css" rel="stylesheet">
+	    <link href="<?=base_url()?>includes/bootstrap/css/estilo.css" rel="stylesheet">
 	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	    <!--[if lt IE 9]>
@@ -17,24 +18,30 @@
 	</head>
 <body>
 	<div class="container">
-		<div class="row margen">
-			<section class="redondo">
-				<div class="banner boxFlex">
-					<h1>Secretaria General</h1>
-				</div>
-			</section>
+		<br>
+		<div class="row-fluid">
+			<div class="jumbotron">
+				<h1>Secretaria General</h1>
+			</div>
 		</div>
+<div class="row">
+	<div class="col-sm-12">
+		<ul class="breadcrumb">
+			<?
+				switch ($bread) {
+					case 1:?>
+						<li><a href="<?=base_url()?>index.php/Secretaria/principal/">Inicio</a></li>	
+				  <?break;
+					case 2:?>
+						<li><a href="<?=base_url()?>index.php/Secretaria/principal/">Inicio</a> <span class="divider"> /</span> Buscar</li>
+					<?break;
+					case 13:?>
+						<li><a href="<?=base_url()?>index.php/Admin/principal/">Inicio</a></li>	
+					<?break;
+				}
+			?>
 		
-		<header>	
-			<div class="menu">
-				<p>Secretaria General</p> <span class="icon-menu"></span>
-			</div>
-			<div class="row">
-				<nav>
-					<ul>
-						<li><a href=""><span class="icon-home"></span>Agenda </a></li>
-						<li><a href=""><span class="icon-earth"></span>Documentos </a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+	      
+	    </ul>
+	</div>
+</div>

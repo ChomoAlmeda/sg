@@ -7,6 +7,20 @@
 			'class'			=> 'form-control'
 		);
 
+	$buscarFolio = array(
+			'placeholder'	=> 'Buscar Folio',
+			'id'			=> 'buscarFolio', 
+			'name'			=> 'buscarFolio',
+			'class'			=> 'form-control'
+		);
+
+	$buscarArea = array(
+			'placeholder'	=> 'Buscar Area',
+			'id'			=> 'buscarArea', 
+			'name'			=> 'buscarArea',
+			'class'			=> 'form-control'
+		);
+
 	$botonB = array(
 			'type'	=> 'submit', 
 			'class'	=> 'btn btn-success',
@@ -88,10 +102,21 @@
 			'id'	=> 'Quien', 
 			'class'	=> 'form-control'
 		);
+	$folio = array(
+			'name'	=> 'Folio', 
+			'id'	=> 'Folio', 
+			'class'	=> 'form-control'
+		);
 	$doc = array(
 			'name'	=> 'Doc', 
 			'id'	=> 'Doc',
 			'value'	=> set_value('Doc'),
+			'type' 	=> 'file'
+		);
+	$evidencia = array(
+			'name'	=> 'Evidencia', 
+			'id'	=> 'Evidencia',
+			'value'	=> set_value('Evidencia'),
 			'type' 	=> 'file'
 		);
 	$botonD = array(
@@ -103,60 +128,231 @@
 		);
 	
 ?>
-	
-	<div class="row">
-		<section class="left">
-			<h4>Bienvenido: <?=$usuario?></h4>
-		</section>
-	</div>
-	<div class="row">
-		<section class="boxFlex rowN">
-			<article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime excepturi voluptates natus tenetur animi recusandae in harum reiciendis vero voluptatem, blanditiis tempora. Laudantium facere totam culpa dolorum nihil molestiae dignissimos!</article>
-			<article>Alias magni ad praesentium qui inventore dicta, sit quaerat nulla eveniet! Unde praesentium ipsam dolorem impedit, dolore vitae quisquam laborum, voluptatem itaque in, enim magnam perspiciatis asperiores. Eum, officiis, necessitatibus.</article>
-		</section>
-	</div>
-		<table class="table table-bordered">
-			<tr>
-				<th colspan="4">
-					<center>
-						<h1>Agenda del Dia</h1>
-					</center>
-				</th>
-			</tr>
-			<?
-				if($agenda->num_rows() > 0){
-					echo "<tr><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
-					foreach($agenda->result() as $row){
-						echo "<tr><td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
-					}
-				}else{
-					echo "<tr><th colspan='4'><center>No hay Ningun Evento para el dia de hoy</center></th></tr>";
-				}
-			?>
-		</table>
-	</div>
-	<div class="row">
-		<table class="table table-bordered">
-			<tr>
-				<th colspan="4">
-					<center>
-						<h1>Agenda de Mañana</h1>
-					</center>
-				</th>
-			</tr>
-			<? 
-				if($manana->num_rows() > 0){
-					echo "<tr><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
-					foreach($manana->result() as $row){
-						echo "<tr><td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
-					}
-				}else{
-					echo "<tr><th colspan='4'><center>No hay Ningun Evento para el dia de hoy</center></th></tr>";
-				}
-			?>
-		</table>
-	</div>
+    <ul id="myTabs" class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Agenda</a></li>
+      <li class="" role="presentation"><a aria-expanded="false" href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Documentos</a></li>
+    </ul>
+	<div id="myTabContent" class="tab-content">
+	    <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+	    	<div class="row">
+	    		<div class="col-sm-12">
+			        <div class="formulario" >
+						<?=form_open_multipart('Admin/agenda')?>
+							<table class="table table-bordered">
+								<tr>
+									<th colspan="2">
+										<center>Agregar Evento</center>
+									</th>
+								</tr>
+								<tr>
+									<th>Nombre:</th>
+									<td><?=form_input($evento)?></td>
+								</tr>
+								<tr>
+									<th>Lugar:</th>
+										<td><?=form_input($lugar)?></td>
+								</tr>
+								<tr>
+									<th>Fecha:</th>
+									<td><?=form_input($fecha)?></td>
+								</tr>
+								<tr>
+									<th>Hora:</th>
+									<td><?=form_input($hora)?></td>
+								</tr>
+								<tr>
+								<th>Evidencia:</th>
+									<td><?=form_upload($evidencia)?></td>
+								</tr>
+								<tr>
+								<th colspan='2'>
+										<center><?=form_input($boton)?></center>
+									</th>
+								</tr>
+							</table>
+						<?=form_close()?>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<?=form_open('Admin/buscar')?>
+						<table class="table table-bordered">
+							<tr>
+								<th colspan='2'><?=form_input($buscar)?></th><td><center><?=form_input($botonB)?></center></td>
+							</tr>
+						</table>
+					<?=form_close()?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<?=form_open('Admin/buscarFolio')?>
+						<table class="table table-bordered">
+							<tr>
+								<th colspan='2'><?=form_input($buscarFolio)?></th><td><center><?=form_input($botonB)?></center></td>
+							</tr>
+						</table>
+					<?=form_close()?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<?=form_open('Admin/buscarArea')?>
+						<table class="table table-bordered">
+							<tr>
+								<th colspan='2'><?=form_input($buscarArea)?></th><td><center><?=form_input($botonB)?></center></td>
+							</tr>
+						</table>
+					<?=form_close()?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<table class="table table-bordered">
+						<tr>
+							<th colspan="4">
+								<center>
+									<h1>Agenda del Dia</h1>
+								</center>
+							</th>
+						</tr>
+						<? 
+						if($agenda->num_rows() > 0){
+						echo "<tr><th></th><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
+							foreach($agenda->result() as $row){
+								echo "<tr>
+										<td>";
+									if($row->Evidencia === "Sin evidencia"){
+										echo "Sin evidencia";
+									}else{
+										echo "<a href=".base_url()."includes/docs/".$row->Evidencia." target = '_self'><span class='glyphicon glyphicon-eye-open'></span></a>";
+									}
+									echo "		
+										</td>
+										<td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
+							}
+						}else{
+							echo "<tr><th colspan='4'><center>No hay Ningun Evento para el dia de hoy</center></th></tr>";
+						}
+						?>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<table class="table table-bordered">
+						<tr>
+							<th colspan="4">
+								<center>
+									<h1>Agenda de Mañana</h1>
+								</center>
+							</th>
+						</tr>
+						<? 
+						if($manana->num_rows() > 0){
+							echo "<tr><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
+								foreach($manana->result() as $row){
+									echo "<tr><td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
+								}
+						}else{
+							echo "<tr><th colspan='4'><center>No hay Ningun Evento para el dia de hoy</center></th></tr>";
+						}
+						?>
+					</table>
+				</div>
+			</div>
+	    </div>
+	    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+	    	<div class="row">
+	        	<div class="col-md-12">
+	        		<?=form_open_multipart('Admin/agregarD')?>
+	        		<center><h3>Documentos en tramite </h3></center>
 
-	
+	        		<div class="formulario">
+		        		<table class="table table-bordered">
+		        			<tr><th>Folio:</th><td><?=form_input($folio)?></td></tr>
+		        			<tr><th>Hora:</th><td><?=form_input($hora)?></td></tr>
+		        			<tr><th>Fecha:</th><td><?=form_input($fechaD)?></td></tr>
+		        			<tr>
+		        				<th>Area: </th>
+		        				<td>
+		        					<select name="Area" class="form-control">
+		        						<? 
+		        							if($areas -> num_rows() > 0){
+		        								foreach($areas->result() as $area){
+		        									echo "<option value='".$area->IdArea."'>".$area->Area."</option>";	
+		        								}
+		        							}else{
+		        								echo "No hay valores";
+		        							}
+		        						?>
+		        					</select>
+		        				</td>
+
+		        			<tr><th>Tramite:</th><td><?=form_input($tramite)?></td></tr>
+		        			<tr><th>Observacion:</th><td><?=form_input($observacion)?></td></tr>
+		        			<tr><th>Quien envia:</th><td><?=form_input($quien)?></td>
+		        			</tr>
+		        			<tr>
+								<th>Documento:</th>
+								<td><?=form_upload($doc)?></td>
+							</tr>
+		        			<tr>
+		        				<th colspan="2">
+		        					<center><?=form_input($botonD)?></center>
+		        				</th>
+		        			</tr>
+		        		</table>
+	        		</div>
+					<?=form_close()?>
+	        	</div>
+	        </div>
+	    	<div class="row">
+	    		<div class="col-sm-12">
+						<?=form_open('Admin/buscarD')?>
+							<table class="table table-bordered">
+								<tr>
+									<th colspan='2'><?=form_input($buscarD)?></th><td><center><?=form_input($botonBD)?></center></td>
+								</tr>
+							</table>
+						<?=form_close()?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<table class="table table-bordered">
+						<tr>
+							<th></th><th></th><th>Folio</th><th>Hora</th><th>Fecha</th><th>Area</th><th>Quien</th><th>Tramite</th><th>Observacion</th>
+						</tr>
+						<?php
+							if($documentos -> num_rows() > 0){
+								foreach($documentos -> result() as $row){
+									echo "<tr>
+											<td>
+												<a href='".base_url()."includes/docs/".$row->Doc."' target = '_self'><span class='glyphicon glyphicon-eye-open'></span></a>
+											</td>
+											<td>
+												<a href='".base_url()."index.php/Admin/modificar/".$row->IdDocumentos."' target = '_self'><span class='glyphicon glyphicon-pencil'></span></a>
+											</td>
+											<td>".$row->Folio."</td>
+											<td>".$row->Hora."</td>
+											<td>".$row->Fecha."</td>
+											<td>".$row->Area."</td>
+											<td>".$row->Quien."</td>
+											<td>".$row->Tramite."</td>
+											<td>".$row->Observacion."</td>
+										</tr>";
+								}
+							}
+						?>
+						<tr></tr>
+					</table>
+				</div>
+			</div>
+			
+	    </div>
+	</div>
+  
 
 
