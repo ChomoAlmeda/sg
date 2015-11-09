@@ -60,6 +60,9 @@ class Inicio_model extends CI_Model {
                 'Folio' => $buscarFolio
             );
         $consulta = $this->db->get_where('bc_documentos', $condicion);
+        return $consulta;
     }
+
+    
 }
 ?>

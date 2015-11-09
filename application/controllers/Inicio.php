@@ -60,5 +60,9 @@ class Inicio extends CI_Controller {
 		}
 	}
 
+	public function noload(){
+		$this->load->view('usuarios/error');
+	}
+
 	
 }

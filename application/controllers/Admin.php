@@ -108,6 +108,15 @@ class Admin extends CI_Controller {
 		$this->load->view('estructura/foot');
 	}
 
+	public function buscarArea(){
+		$datos['bread']	= 13;
+		$buscarArea = $this->input->post('buscarArea');
+		$datos['consulta'] = $this->Inicio_model->buscarArea($buscarArea);
+		$this->load->view('estructura/head', $datos);
+		$this->load->view('admin/buscarArea', $datos);
+		$this->load->view('estructura/foot');
+	}
+
 	public function modificar($id){
 		$datos['bread']	= 13;
 		$datos['consulta'] = $this->Inicio_model->buscarModificar($id);

@@ -9,18 +9,13 @@
 				</th>
 			</tr>
 				<? 
-					
-						echo "<tr><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
-						foreach($consulta->result() as $row){
-							echo "<tr><td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
-				}
-
-				
+					echo "<tr><th>Fecha</th><th>Evento</th><th>Hora</th><th>Lugar</th></tr>";
+					foreach($consulta->result() as $row){
+						echo "<tr><td>".$row->Fecha."</td><td>".$row->Evento."</td><td>".$row->Hora."</td><td>".$row->Lugar."</td></tr>";
+					}
 				?>
-
 		</table>
 		<center><a href="<?base_url()?>imprimir/agenda" class="btn btn-success">Version para Imprimir</a></center>
-		
 	<?}else{
 		echo "<h1>No hay datos</h1>";
 	}

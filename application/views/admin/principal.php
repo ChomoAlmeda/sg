@@ -187,28 +187,6 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<?=form_open('Admin/buscarFolio')?>
-						<table class="table table-bordered">
-							<tr>
-								<th colspan='2'><?=form_input($buscarFolio)?></th><td><center><?=form_input($botonB)?></center></td>
-							</tr>
-						</table>
-					<?=form_close()?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<?=form_open('Admin/buscarArea')?>
-						<table class="table table-bordered">
-							<tr>
-								<th colspan='2'><?=form_input($buscarArea)?></th><td><center><?=form_input($botonB)?></center></td>
-							</tr>
-						</table>
-					<?=form_close()?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
 					<table class="table table-bordered">
 						<tr>
 							<th colspan="4">
@@ -309,14 +287,36 @@
 	        	</div>
 	        </div>
 	    	<div class="row">
-	    		<div class="col-sm-12">
-						<?=form_open('Admin/buscarD')?>
-							<table class="table table-bordered">
-								<tr>
-									<th colspan='2'><?=form_input($buscarD)?></th><td><center><?=form_input($botonBD)?></center></td>
-								</tr>
-							</table>
-						<?=form_close()?>
+				<div class="col-sm-12">
+					<?=form_open('Admin/buscarD')?>
+						<table class="table table-bordered">
+							<tr>
+								<th colspan='2'><?=form_input($buscarD)?></th><td><center><?=form_input($botonB)?></center></td>
+							</tr>
+						</table>
+					<?=form_close()?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<?=form_open('Admin/buscarFolio')?>
+						<table class="table table-bordered">
+							<tr>
+								<th colspan='2'><?=form_input($buscarFolio)?></th><td><center><?=form_input($botonB)?></center></td>
+							</tr>
+						</table>
+					<?=form_close()?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<?=form_open('Admin/buscarArea')?>
+						<table class="table table-bordered">
+							<tr>
+								<th colspan='2'><?=form_input($buscarArea)?></th><td><center><?=form_input($botonB)?></center></td>
+							</tr>
+						</table>
+					<?=form_close()?>
 				</div>
 			</div>
 			<div class="row">
