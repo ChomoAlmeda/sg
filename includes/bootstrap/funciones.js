@@ -19,4 +19,10 @@ $('#buscarD').datepicker({dateFormat: "yy-mm-dd"});
     });
   });
 
+  $('#docTable').hide();
+
+  $('#modificar').click(function(){
+    $('#docTable').show();
+    return false
+  });
 

@@ -80,6 +80,12 @@
 			'id'	=> 'Hora', 
 			'class'	=> 'form-control', 
 		);
+	$area = array(
+			'name' => 'Area', 
+			'id'	=> 'Area', 
+			'class'	=> 'form-control', 
+		);
+	
 	$fechaD = array(
 			'name' => 'FechaD', 
 			'id'	=> 'FechaD', 
@@ -255,17 +261,7 @@
 		        			<tr>
 		        				<th>Area: </th>
 		        				<td>
-		        					<select name="Area" class="form-control">
-		        						<? 
-		        							if($areas -> num_rows() > 0){
-		        								foreach($areas->result() as $area){
-		        									echo "<option value='".$area->IdArea."'>".$area->Area."</option>";	
-		        								}
-		        							}else{
-		        								echo "No hay valores";
-		        							}
-		        						?>
-		        					</select>
+		        					<?=form_input($area)?>
 		        				</td>
 
 		        			<tr><th>Tramite:</th><td><?=form_input($tramite)?></td></tr>

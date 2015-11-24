@@ -55,8 +55,8 @@
 			$doc = array(
 					'name'	=> 'Doc', 
 					'id'	=> 'Doc',
-					'value'	=> set_value('Doc'),
-					'type' 	=> 'file'
+					'value'	=> $row->Doc,
+					'type' 	=> 'input'
 				);
 			$botonD = array(
 					'id' => 'boton', 
@@ -84,25 +84,22 @@
 		        			<tr>
 		        				<th>Area: </th>
 		        				<td>
-		        					<select name="Area" class="form-control" value='<?=$row->Area?>'>
-		        						<? 
-		        							if($areas -> num_rows() > 0){
-		        								foreach($areas->result() as $area){
-		        									echo "<option value='".$area->IdArea."'>".$area->Area."</option>";	
-		        								}
-		        							}else{
-		        								echo "No hay valores";
-		        							}
-		        						?>
-		        					</select>
+		        					<?=form_input($area)?>
 		        				</td>
 		        			</tr>
-		        			<tr><th>Quien envia:</th><td><?=form_input($quien)?></td>
+		        			<tr>
+		        				<th>Quien envia:</th>
+		        				<td><?=form_input($quien)?></td>
 		        			</tr>
 		        			<tr>
-								<th>Documento:</th>
-								<td><?=form_upload($doc)?></td>
-							</tr>
+		        				<th>Documento</th>
+		        				<td><a href="<?=base_url()?>includes/docs/<?=$row->Doc?>" target="_blank">Ver</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="modificar">Modificar</a></td>
+		        			</tr>
+		        			<tr id="docTable">
+		        				<th colspan="2">
+		        					<center>Archivo nuevo</center>
+		        				</th>
+		        			</tr>
 		        			<tr>
 		        				<th colspan="2">
 		        					<center><?=form_input($botonD)?></center>

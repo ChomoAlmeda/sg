@@ -42,7 +42,6 @@ class Inicio_model extends CI_Model {
         $condicion = array(
                 'bc_documentos.IdDocumentos' => $id
             );
-        $this->db->join('ab_areas', 'ab_areas.IdArea = bc_documentos.IdArea');
         $consulta = $this->db->get_where('bc_documentos', $condicion);
         return $consulta;
     }
@@ -63,6 +62,12 @@ class Inicio_model extends CI_Model {
         return $consulta;
     }
 
-    
+    function buscarArea($buscarArea){
+        $this->db->like('Area', $buscarArea);
+        $consulta = $this->db->get('bc_documentos');
+        return $consulta;
+    }
+
+
 }
 ?>

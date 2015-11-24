@@ -9,9 +9,9 @@
 				</th>
 			</tr>
 				<? 
-					echo "<tr><th>Fecha</th><th>Folio</th><th>Hora</th><th>IdArea</th></tr>";
+					echo "<tr><th>Fecha</th><th>Folio</th><th>Hora</th><th>Area</th></tr>";
 					foreach($consulta->result() as $row){
-						echo "<tr><td>".$row->Fecha."</td><td>".$row->Folio."</td><td>".$row->Tramite."</td><td>".$row->IdArea."</td></tr>";
+						echo "<tr><td>".$row->Fecha."</td><td>".$row->Folio."</td><td>".$row->Tramite."</td><td>".$row->Area."</td></tr>";
 					}			
 				?>
 		</table>
